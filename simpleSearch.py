@@ -1,15 +1,15 @@
-import requests
-import baseClasses as bc
+from baseClasses import Category as C
 """
 Searching by cuisine
 """
-class Cuisine(bc.Category):
+class Cuisine(C):
     def __init__(self, api):
-        bc.Category.__init__(self, api, "cuisine") #initialises the api to search by cuisine
+        C.__init__(self, api, "cuisine")
 
 """
 Searching by diet
 """
-class Diet(bc.Category):
+class Diet(C):
     def __init__(self, api):
-        bc.Category.__init__(self, api, "diet") #initialises the api to search by diet
+        C.__init__(self, api, "diet")
+
