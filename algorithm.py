@@ -20,7 +20,5 @@ class Algorithm():
             if diet in text:
                 d = ss.Diet(self.api)
                 self.api = d.url(diet)
-
-        print(self.api)
         
         return self.api
