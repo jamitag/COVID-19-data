@@ -15,4 +15,9 @@ a = A(url)
 
 search = a.searchBy(text) 
 
+res = Search.get(search)
+
+r = Recipes(res)
+
+r.selectRecipe()
 
