@@ -7,7 +7,7 @@ class Algorithm():
 
     def __init__(self, api):
         self.api = api
-        self.cuisines = ["british", "chinese", "italian"]
+        self.cuisines = ["british", "chinese", "italian", "greek"]
         self.diets = ["vegetarian", "vegan", "paleo"]
 
     def searchBy(self, text):
