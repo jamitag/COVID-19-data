@@ -1,12 +1,13 @@
 import simpleSearch as ss
+import random
 
 """
 Defines the algorithm for processing natural language inputted by user
 """
 class Algorithm():
 
-    def __init__(self, api):
-        self.api = api
+    def __init__(self, api, key):
+        self.api = api + "complexSearch?number=10&offset="+str(random.randint(0, 100))+"&apiKey=" + key
         self.cuisines = ["british", "chinese", "italian", "greek"]
         self.diets = ["vegetarian", "vegan", "paleo"]
 
