@@ -21,3 +21,5 @@ res = Search.get(search)
 r = Recipes(res)
 
 id = r.selectRecipe()
+
+r.selectIngredients(id, url, key)
