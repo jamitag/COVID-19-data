@@ -44,4 +44,8 @@ class Recipes():
         
             print(fullName)
 
-    
+    def selectInstructions(self, id, url, key):
+        apiInformation = url + str(id) + "/information?apiKey="+key # returning the information tag from recipe database
+        res = requests.get(apiInformation).json()
+
+        print(res["instructions"].splitlines())
