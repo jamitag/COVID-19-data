@@ -23,3 +23,8 @@ r = Recipes(res)
 id = r.selectRecipe()
 
 r.selectIngredients(id, url, key)
+
+showInstructions = input("Show Instruction? Y/N")
+
+if showInstructions.upper() == "Y":
+    r.selectInstructions(id, url, key)
