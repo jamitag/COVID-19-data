@@ -1,17 +1,16 @@
 import simpleSearch as ss
 import random
 
-"""
-Defines the algorithm for processing natural language inputted by user
+"""Defines the algorithm for processing natural language inputted by user
 """
 class Algorithm():
-
+    
     def __init__(self, api, key):
         self.api = api + "complexSearch?number=10&offset="+str(random.randint(0, 100))+"&apiKey=" + key
         self.cuisines = ["british", "chinese", "italian", "greek"]
         self.diets = ["vegetarian", "vegan", "paleo"]
 
-    def searchBy(self, text):
+    def search_by(self, text):
         for cuisine in self.cuisines:
             if cuisine in text:
                c = ss.Cuisine(self.api)

@@ -14,17 +14,17 @@ text = input("What recipes would you like? ")
 
 a = A(url, key)
 
-search = a.searchBy(text) 
+search = a.search_by(text)
 
 res = Search.get(search)
 
 r = Recipes(res)
 
-id = r.selectRecipe()
+id = r.select_recipe()
 
-r.selectIngredients(id, url, key)
+r.select_ingredients(id, url, key)
 
-showInstructions = input("Show Instruction? Y/N")
+showInstructions = input("Show Instruction? Y/N - ")
 
 if showInstructions.upper() == "Y":
-    r.selectInstructions(id, url, key)
+    r.select_instructions(id, url, key)

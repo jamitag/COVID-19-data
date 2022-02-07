@@ -1,7 +1,6 @@
 import requests
 
-"""
-Sets the base attributes for all cat classes within the programme
+"""Sets the base attributes for all cat classes within the programme
 """
 class Category(): 
     def __init__(self, api, param):
