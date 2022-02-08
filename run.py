@@ -10,7 +10,7 @@ key = str(secrets.ApiKey())
 
 url = "https://api.spoonacular.com/recipes/"
 
-text = input("What recipes would you like? /n")
+text = input("What recipes would you like? ")
 
 a = A(url, key)
 
@@ -24,7 +24,7 @@ id = r.select_recipe()
 
 r.select_ingredients(id, url, key)
 
-showInstructions = input("Show Instruction? Y/N - /n")
+showInstructions = input("Show Instruction? Y/N - ")
 
 if showInstructions.upper() == "Y":
     r.select_instructions(id, url, key)

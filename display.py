@@ -47,4 +47,4 @@ class Recipes():
         apiInformation = url + str(id) + "/information?apiKey="+key # returning the information tag from recipe database
         res = requests.get(apiInformation).json()
 
-        print(res["instructions"].splitlines())
+        print(res["instructions"])
