@@ -26,4 +26,10 @@ class Algorithm():
                 d = ss.Diet(self.api)
                 self.api = d.url(diet)
 
+        if self.api == self.originalApi: # if anything other than specified cuisine / diet, result will be random
+            choice = input("You have entered no specific criteria, would you like to continue? (Y/N) ") 
+        
+            if choice.upper() == "N":
+                raise ValueError()
+
         return self.api

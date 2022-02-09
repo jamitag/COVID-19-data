@@ -15,6 +15,11 @@ text = input("What recipes would you like? ")
 
 a = A(url, key)
 
+try:
+    search = a.search_by(text)
+except:
+    sys.exit()
+
 res = Search.get(search)
 
 r = Recipes(res)
