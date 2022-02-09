@@ -1,15 +1,14 @@
 from baseClasses import Category as C
-"""
-Searching by cuisine
-"""
+
 class Cuisine(C):
+"""Defines search by cuisine
+"""
     def __init__(self, api):
         C.__init__(self, api, "cuisine")
 
-"""
-Searching by diet
-"""
 class Diet(C):
+"""Defines search by diet
+"""
     def __init__(self, api):
         C.__init__(self, api, "diet")
 

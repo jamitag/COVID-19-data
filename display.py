@@ -1,8 +1,8 @@
 import requests
 
+class Recipes():
 """Unlocking the list of recipes to enable indexing and user selection and returning user friendly data from the API
 """
-class Recipes():
     def __init__(self, res):
         self.values = res["results"] 
         self.options = {}

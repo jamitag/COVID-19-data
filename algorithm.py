@@ -1,9 +1,9 @@
 import simpleSearch as ss
 import random
 
+class Algorithm():
 """Defines the algorithm for processing natural language inputted by user
 """
-class Algorithm():
     
     def __init__(self, api, key):
         self.api = api + "complexSearch?number=10&offset="+str(random.randint(0, 100))+"&apiKey=" + key
