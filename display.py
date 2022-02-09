@@ -12,6 +12,8 @@ class Recipes():
         """
         Function description
         """
+        self.options = {}
+
         for i, value in enumerate(self.values): #makes list enumerable
             print(str(i+1) + ". " + value["title"]) # the number user will choose
             self.options[i+1] = value["title"]
@@ -22,13 +24,22 @@ class Recipes():
 
         
         choice = input("Select a recipe - ")
-        title = self.options[int(choice)] # storing the name of the recipe that user selects
+
+        numberChoice = 0
+
+        try: # validating the user input, throwing an error message if invalid text is input
+            numberChoice = int(choice)
+            if numberChoice < 1 or numberChoice > 10:
+                raise ValueError("Incorrect Input")
+        except:
+            print("\n Incorrect input \n")
+            self.select_recipe()
+
+        title = self.options[numberChoice] # storing the name of the recipe that user selects
 
         for value in self.values: # searching each of the ten recipes for the selected title to see if match
             if value["title"] == title:
                 return value["id"] #returning recipes id number from api
-            else:
-                print("That is not a valid option")
 
     def select_ingredients(self, id, url, key):
         """

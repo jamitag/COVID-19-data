@@ -2,6 +2,7 @@ import requests
 import simpleSearch
 import secrets
 import random
+import sys
 from algorithm import Algorithm as A
 from baseClasses import Search
 from display import Recipes
@@ -13,8 +14,6 @@ url = "https://api.spoonacular.com/recipes/"
 text = input("What recipes would you like? ")
 
 a = A(url, key)
-
-search = a.search_by(text)
 
 res = Search.get(search)
 

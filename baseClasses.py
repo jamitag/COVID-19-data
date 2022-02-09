@@ -16,10 +16,10 @@ class Category():
         return self.api+type # adds the value from the user input
 
 class Search():
-    """?
+    """for interactions with the API
     """
     def get(api):
         """
-        Function description
+        sends a get request to the api and returns the json response
         """
         return requests.get(api).json()

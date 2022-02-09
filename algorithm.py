@@ -7,6 +7,7 @@ class Algorithm():
     
     def __init__(self, api, key):
         self.api = api + "complexSearch?number=10&offset="+str(random.randint(0, 100))+"&apiKey=" + key
+        self.originalApi = self.api 
         self.cuisines = ["british", "chinese", "italian", "greek"]
         self.diets = ["vegetarian", "vegan", "paleo"]
 
@@ -24,5 +25,5 @@ class Algorithm():
             if diet in text:
                 d = ss.Diet(self.api)
                 self.api = d.url(diet)
-        
+
         return self.api
