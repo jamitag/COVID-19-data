@@ -1,13 +1,17 @@
 import requests
 
 class Recipes():
-"""Unlocking the list of recipes to enable indexing and user selection and returning user friendly data from the API
-"""
+    """Unlocking the list of recipes to enable indexing and user selection and returning user friendly data from the API
+    """
+    
     def __init__(self, res):
         self.values = res["results"] 
         self.options = {}
 
     def select_recipe(self): # loops through results and prints each value
+        """
+        Function description
+        """
         for i, value in enumerate(self.values): #makes list enumerable
             print(str(i+1) + ". " + value["title"]) # the number user will choose
             self.options[i+1] = value["title"]
@@ -23,8 +27,14 @@ class Recipes():
         for value in self.values: # searching each of the ten recipes for the selected title to see if match
             if value["title"] == title:
                 return value["id"] #returning recipes id number from api
+            else:
+                print("That is not a valid option")
 
     def select_ingredients(self, id, url, key):
+        """
+        Function description
+        """
+
         apiInformation = url + str(id) + "/information?apiKey="+key # returning the information tag from recipe database
         res = requests.get(apiInformation).json()
 
@@ -44,6 +54,10 @@ class Recipes():
             print(fullName)
 
     def select_instructions(self, id, url, key):
+        """
+        Function description
+        """
+
         apiInformation = url + str(id) + "/information?apiKey="+key # returning the information tag from recipe database
         res = requests.get(apiInformation).json()
 
