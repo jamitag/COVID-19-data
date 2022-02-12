@@ -1,5 +1,6 @@
 import json
 
+
 class ApiKey():
     """
     Sources the API key to make api call from creds.json
