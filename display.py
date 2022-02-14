@@ -67,9 +67,10 @@ class Recipes():
             unit = str(ingredient["measures"]["metric"]["unitShort"])
             # Represents unit (e.g grams) within measurement
             fullName = ""
-            if isinstance(ingredient["nameClean"], str):  # checks wether the value is an instance of string
+            if isinstance(ingredient["nameClean"], str):
                 if len(unit) > 0:
-                    fullName = amount + " " + unit + " " + ingredient["nameClean"]
+                    fullName = amount + " " + unit + " " + \
+                        ingredient["nameClean"]
                 # Produces ingredient + amount / unit
                 else:
                     fullName = amount + " " + ingredient["nameClean"]
@@ -78,7 +79,8 @@ class Recipes():
 
     def select_instructions(self, id, url, key):
         """
-        Pulling the 'instruction' parameter from the object and manuipulating format
+        Pulling the 'instruction' parameter from the object and manuipulating
+        format
         """
 
         apiInformation = url + str(id) + "/information?apiKey="+key
@@ -96,5 +98,3 @@ class Recipes():
             instructions = re.sub("\.", ". \n", instructions)
 
         print(instructions)
-
-

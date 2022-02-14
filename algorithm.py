@@ -16,7 +16,8 @@ class Algorithm():
 
     def search_by(self, text):
         """
-        Searches the user inputted text for specific key words and adds criteria to the API call
+        Searches the user inputted text for specific key words and adds
+         criteria to the API call
         """
         text = text.lower()
 
