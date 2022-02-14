@@ -1,31 +1,25 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Love recipes
 
-Welcome jamitag,
+## Welcome - [Love recipes](https://jamitag.github.io/love-recipes/)
+This terminal based programme is designed to produce a list of recipes based on the users preference. Interacting with an external database ([spoonacular](https://spoonacular.com/)), the user will receive a variation of recipes based upon their preferred cuisine and/or dietary requirements.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
 
-## Reminders
+## How it works
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+Upon running the programme, the user is prompted to select the type of recipe they’re interested in e.g. “italian vegetarian”.
 
-## Creating the Heroku app
+<img src="assets/images/whatrecipe.png">
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Using this combination of cuisines and/or dietary requirements, the API will return a list of ten recipes.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+<img src="assets/images/listrecipes.png">
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+The resulting list of ten recipes is indexed and the user is further prompted to select a recipe by inputting the relevant number.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+Once selected, the chosen recipe is displayed to the user and shown details including ingredients and quantities.
 
-Connect your GitHub repository and deploy as normal.
+<img src="assets/images/ingredients.png">
 
-## Constraints
+The user is further prompted to answer if they would like the view the instructions for chosen recipe. Answering ‘Y’ will display the steps to make the recipe. Answering ’N’ will restart the programme.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+<img src="assets/images/instructions.png">

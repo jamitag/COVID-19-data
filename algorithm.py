@@ -8,7 +8,7 @@ class Algorithm():
     def __init__(self, api, key):
         self.api = api + "complexSearch?number=10&offset="+str(random.randint(0, 100))+"&apiKey=" + key
         self.originalApi = self.api
-        self.cuisines = ["british", "chinese", "italian", "greek", "japanese", "indian"]
+        self.cuisines = ["chinese", "italian", "british", "greek", "japanese", "indian"]
         self.diets = ["vegetarian", "vegan", "paleo"]
 
     def search_by(self, text):
