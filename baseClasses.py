@@ -13,7 +13,8 @@ class Category():
         Function description
         """
 
-        return self.api+type # adds the value from the user input
+        return self.api+type  # adds the value from the user input
+
 
 class Search():
     """for interactions with the API
