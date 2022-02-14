@@ -60,7 +60,8 @@ class Recipes():
         print("ingredients")
 
         for ingredient in ingredients:
-            amount = str(ingredient["measures"]["metric"]["amount"]).replace(".0", "")
+            amount = str(ingredient["measures"]["metric"]["amount"])\
+                .replace(".0", "")
             # Represents number within measurement
             unit = ingredient["measures"]["metric"]["unitShort"]
             # Represents unit (e.g grams) within measurement
