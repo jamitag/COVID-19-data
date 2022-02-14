@@ -22,8 +22,6 @@ class Recipes():
             # the number the user will choose
             self.options[i+1] = value["title"]
 
-        print(self.options)
-
         if len(self.options) < 1:
             # if no recipes appear from API call, user is notified
             print("No recipes found")
@@ -95,7 +93,7 @@ class Recipes():
             instructions = re.sub("</li>", "\n", instructions)
             instructions = re.sub("</ol>", "\n", instructions)
         else:
-            instructions = re.sub(".", ". \n", instructions)
+            instructions = re.sub("\.", ". \n", instructions)
 
         print(instructions)
 
