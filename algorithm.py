@@ -8,7 +8,7 @@ class Algorithm():
 
     def __init__(self, api, key):
         self.api = api + "complexSearch?number=10&offset="\
-             + str(random.randint(0, 5))+"&apiKey=" + key  #when the offset of the randint method is too high, the API throws an 404 error(not found) for cuisines that dont have many recipes e.g british. Lowered to decrease chance of error
+             + str(random.randint(0, 5))+"&apiKey=" + key
         self.originalApi = self.api
         self.cuisines = ["chinese", "italian", "british",
                          "greek", "japanese", "indian"]
@@ -16,7 +16,7 @@ class Algorithm():
 
     def search_by(self, text):
         """
-        Function description
+        Searches the user inputted text for specific key words and adds criteria to the API call
         """
         text = text.lower()
 

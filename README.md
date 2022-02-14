@@ -43,12 +43,12 @@ The user is further prompted to answer if they would like the view the instructi
 
     <img src="assets/images/incorrectinput.png">
 
-- Instruction data manipulated to be displayed….
+- When the user chooses to view the recipe instructions, the data is manipulated to be displayed clearly and without any unnecessary, messy metadata.
 
 
 ### Features to add
 
-- Increase scope of search options for user e.g. additional cuisines and calorie counter.
+- Increase scope of options for user e.g. additional search features, calorie counter and daily planner.
 
 - Have a ‘favourite recipe’ feature with allows the user to store their favourite recipes in a database which can be accessed any time.
 
@@ -74,8 +74,8 @@ The user is further prompted to answer if they would like the view the instructi
 
 ### Manual Testing
 - Input data that would throw an error to ensure correct response.
-- Tested the programmes randomising feature to ensure a different 10 recipes appear after each api call.
-- Input lower case response to check the upper method was functioning correctly.
+- Tested the programmes randomising feature to ensure the same recipes didn't appear after each api call.
+- Input lower case responses to check the upper method was functioning correctly and vice versa.
 - Asked friends to navigate through the programme to highlight any glitches or uncertain prompts.
 
 ### Validator Testing
@@ -86,18 +86,17 @@ All .py files were ran through <a href="http://pep8online.com">PEP8 linter</a>, 
 
 ## Bugs
 
-Error - invalid url
-Solution - Using the api documentation, copy and past correct format
+Error - Using the recommended ‘Pip3 freeze > requirements.txt’ command to populate requirements.txt did not work as expected resulting in Heroku unable to display application.
 
-Error - within url “number=id” required to produce number of results. Wouldn’t work until using ‘&’ after ’10’
-Solution - Found solution within documentation
-
-Error - Using the recommended ‘Pip3 freeze > requirements.txt’ command to populate requirements.txt did work as expected resulting in Heroku unable to display application. 
 Solution - Copied requests file from the Love Sandwiches project which solved the issue.
 
-Error - When testing the programme I noticed that there was an issue inputting certain types of cuisine. Sometimes when I input ‘british’ I will receive a list of recipes as expected and sometimes I will receive an error message. I was unable to solve this issue and may be a problem with the API itself.
+Error - When testing the programme there were some searches that where producing 404 error (not found).
 
+Solution - The issue seemed to be resolved by reducing the stop value of the randint() method. It was initially at 100 which may have been too high for some cuisine searches, due to there not being that many although this wasn't clear from the API documentation. Since reducing the stop value, the error has not appeared.
 
+Error - Using the replace() method on the 'instruction' data to remove certain componants did not work as exepected.
+
+Solution - Using Regular expression operations allowed me to manipulate the data the way I intended.
 
 ## Technologies
 
@@ -127,10 +126,14 @@ This programme was deployed using [Heroku](https://heroku.com/)
 
 ## Credits
 
-https://www.programiz.com/python-programming/methods/string/replace
+### Content
 
-Discovering the [replace method](https://www.programiz.com/python-programming/methods/string/replace) allowed me to convert certain float measurement into integers. Float values were useful for some ingredients (i.e 1.5 grams of sugar) but not suitable for others (I.e. 2.0 potatoes) therefore discovering the above solution allowed me to replace “.0” with “ ”, making the results more readable to the user.
+Use of the [replace method](https://www.programiz.com/python-programming/methods/string/replace) allowed me to convert certain float measurement into integers. Float values were useful for some ingredients (i.e 1.5 grams of sugar) but not suitable for others (I.e. 2.0 potatoes) therefore discovering the above solution allowed me to replace “.0” with “ ”, making the results more readable to the user.
 
 I found this useful [tutorial](https://www.programiz.com/python-programming/exception-handling) on try statements in order to handle errors.
 
-### Content
+Learning about Regular expression operations from [here](https://docs.python.org/3/library/re.html) and numerous stack overflow and slack threads allowed me to manipulate data in a new way.
+
+### Other
+
+Thank you to Sandeep, my mentor, for providing assistance throughout this project as well as Ger from CI who helped with some PEP8 errors.
