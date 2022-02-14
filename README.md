@@ -1,6 +1,6 @@
 # Love recipes
 
-## Welcome - [Love recipes](https://jamitag.github.io/love-recipes/)
+## Welcome - [Love recipes](https://github.com/jamitag/Love-Recipes)
 This terminal based programme is designed to produce a list of recipes based on the users preference. Interacting with an external database ([spoonacular](https://spoonacular.com/)), the user will receive a variation of recipes based upon their preferred cuisine and/or dietary requirements.
 
 

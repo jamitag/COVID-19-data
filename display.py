@@ -1,4 +1,5 @@
 import requests
+import re
 
 
 class Recipes():
@@ -20,6 +21,8 @@ class Recipes():
             print(str(i+1) + ". " + value["title"])
             # the number the user will choose
             self.options[i+1] = value["title"]
+
+        print(self.options)
 
         if len(self.options) < 1:
             # if no recipes appear from API call, user is notified
@@ -48,7 +51,7 @@ class Recipes():
 
     def select_ingredients(self, id, url, key):
         """
-        Function description
+        Pulling 'ingredient' parameter from object and formatting
         """
 
         apiInformation = url + str(id) + "/information?apiKey="+key
@@ -63,24 +66,37 @@ class Recipes():
             amount = str(ingredient["measures"]["metric"]["amount"])\
                 .replace(".0", "")
             # Represents number within measurement
-            unit = ingredient["measures"]["metric"]["unitShort"]
+            unit = str(ingredient["measures"]["metric"]["unitShort"])
             # Represents unit (e.g grams) within measurement
             fullName = ""
-            if len(unit) > 0:
-                fullName = amount + " " + unit + " " + ingredient["nameClean"]
+            if isinstance(ingredient["nameClean"], str):  # checks wether the value is an instance of string
+                if len(unit) > 0:
+                    fullName = amount + " " + unit + " " + ingredient["nameClean"]
                 # Produces ingredient + amount / unit
-            else:
-                fullName = amount + " " + ingredient["nameClean"]
+                else:
+                    fullName = amount + " " + ingredient["nameClean"]
 
             print(fullName)
 
     def select_instructions(self, id, url, key):
         """
-        Function description
+        Pulling the 'instruction' parameter from the object and manuipulating format
         """
 
         apiInformation = url + str(id) + "/information?apiKey="+key
         # Returning the information tag from recipe database
         res = requests.get(apiInformation).json()
 
-        print(res["instructions"])
+        instructions = res["instructions"]
+
+        if re.match(r'^\<', instructions):
+            instructions = re.sub("<ol>", "\n", instructions)
+            instructions = re.sub("<li>", "\n", instructions)
+            instructions = re.sub("</li>", "\n", instructions)
+            instructions = re.sub("</ol>", "\n", instructions)
+        else:
+            instructions = re.sub(".", ". \n", instructions)
+
+        print(instructions)
+
+
