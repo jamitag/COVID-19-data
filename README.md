@@ -36,7 +36,12 @@ The user is further prompted to answer if they would like the view the instructi
 
 - Validation of user input.
 	- When asked ‘What recipes would you like?’, If user inputs an invalid cuisine / diet they will receive the following message; ‘You have entered no specific criteria, would you like to continue? (Y/N)’. Answering ‘Y’ will return a random selection of recipes from available options. Answering ’N’ will end the programme.
+
+    <img src="assets/images/invalidresponse.png">
+
 	- If a user inputs an invalid response to ‘Select recipe’ (i.e. a letter or number not representing a recipe from the returned list), an “incorrect input” message is displayed to the user and the same list is then displayed for the user to try again and select a valid option.
+
+    <img src="assets/images/incorrectinput.png">
 
 - Instruction data manipulated to be displayed….
 
@@ -108,7 +113,7 @@ Error - When testing the programme I noticed that there was an issue inputting c
 
 ## Deployment
 
-- This programme was deployed using [Heroku](https://heroku.com/)
+This programme was deployed using [Heroku](https://heroku.com/)
 
 1. Log into Heroku, select 'Create new app’.
 2. Name your application then within the the dashboard, select settings and scroll down to ‘Reveal Config vars’
@@ -129,5 +134,3 @@ Discovering the [replace method](https://www.programiz.com/python-programming/me
 I found this useful [tutorial](https://www.programiz.com/python-programming/exception-handling) on try statements in order to handle errors.
 
 ### Content
-
-
