@@ -9,11 +9,8 @@ class Category():
         self.api = api + "&"+param+"="
 
     def url(self, type):
-        """
-        Function description
-        """
 
-        return self.api+type  # adds the value from the user input
+        return self.api+type
 
 
 class Search():
